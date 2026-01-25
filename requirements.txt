@@ -1,1 +1,15 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+mlflow
+hsml
+prefect
+hopsworks
+great_expectations
+deepchecks
+fastapi
+dotenv
+pymysql
+sqlalchemy
 
