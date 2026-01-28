@@ -15,3 +15,13 @@ def X_train_y_train(train_df:pd.DataFrame):
 
     return X_train,y_train
 
+def gilbert_skill_score(y_true,y_pred):
+    from sklearn.metrics import confusion_matrix as conf_mat
+
+    tp,fp,fn,tn=conf_mat(y_true,y_pred).ravel()
+    e=tp*(fp+fn)/len(y_true)
+
+    gss=(tp-e)/(tp+fp+fn-e)
+
+    return gss
+
