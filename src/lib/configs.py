@@ -1,4 +1,7 @@
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from typing import List,Union
 
 
 def X_train_y_train(train_df:pd.DataFrame):
@@ -24,4 +27,17 @@ def gilbert_skill_score(y_true,y_pred):
     gss=(tp-e)/(tp+fp+fn-e)
 
     return gss
+
+def model_metrics(y_true,
+                  X_test,
+                  model:Union[LogisticRegression,DecisionTreeClassifier]):
+    from sklearn.metrics import accuracy_score,cohen_kappa_score,matthews_corrcoef
+    y_pred=model.predict(X_test)
+    acc_score=accuracy_score(y_true,y_pred)
+    kappa_score=cohen_kappa_score(y_true,y_pred)
+    mat_score=matthews_corrcoef(y_true,y_pred)
+    gilbert_score=gilbert_skill_score(y_true,y_pred)
+
+    return {"accuracy":acc_score,"kappa_score":kappa_score,"mat_corr":mat_score,"gilbert_score":gilbert_score}
+  
 
