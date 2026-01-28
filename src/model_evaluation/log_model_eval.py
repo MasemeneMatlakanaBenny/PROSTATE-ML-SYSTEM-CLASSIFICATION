@@ -7,7 +7,7 @@ from lib.configs import model_metrics,X_train_y_train
 model:LogisticRegression=joblib.load("models/log_model.pkl")
 
 ## load X_test and y_test:
-test_df=pd.read_csv("data/test_df.csv")
+test_df:pd.DataFrame=pd.read_csv("data/test_df.csv")
 X_test,y_test=X_train_y_train(test_df)
 
 ## compute the model metrics:
