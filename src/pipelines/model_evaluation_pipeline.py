@@ -7,3 +7,9 @@ from typing import Union
 from lib.configs import X_train_y_train
 
 
+
+##load the model first:
+def load_model(path:str)->Union[LogisticRegression,DecisionTreeClassifier]:
+
+    model=joblib.load(path)
+    return model
