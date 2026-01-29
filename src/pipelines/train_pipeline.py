@@ -13,3 +13,11 @@ def get_train_df(path:str="data/train_df")->pd.DataFrame:
     
     train_df=pd.read_csv("data/train_df")
     return train_df
+
+@task
+def load_X_set_y_set(train_df:pd.DataFrame):
+    
+    ## get the X_train and y_train sets:
+    X_train,y_train=X_train_y_train(train_df=train_df)
+    return X_train,y_train
+
