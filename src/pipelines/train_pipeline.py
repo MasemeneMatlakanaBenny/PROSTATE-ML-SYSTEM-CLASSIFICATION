@@ -31,3 +31,14 @@ def train_logistic_reg_model(X_train,y_train)->LogisticRegression:
     model.fit(X_train,y_train)
 
     return model
+
+
+@task
+def train_tree_model(X_train,y_train)->DecisionTreeClassifier:
+    ## train the model:
+    model=DecisionTreeClassifier(criterion="entropy",min_samples_split=4)
+    ## fit the model:
+    model.fit(X_train,y_train)
+
+    return model
+
