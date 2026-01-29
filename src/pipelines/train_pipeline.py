@@ -47,3 +47,14 @@ def train_tree_model(X_train,y_train)->DecisionTreeClassifier:
 def save_model(model:Union[LogisticRegression,DecisionTreeClassifier],path:str):
     joblib.dump(model,path)
 
+
+## compile the pipeline:
+def train_workflow():
+    train_df:pd.DataFrame=get_train_df()
+    X_train,y_train=load_X_set_y_set(train_df=train_df)
+    log_model=train_logistic_reg_model(X_train=X_train,y_train=y_train)
+    dt_model=train_tree_model(X_train=X_train,y_train=y_train)
+
+    save_model(log_model,path="models/log_model.pkl")
+    save_model(dt_model,path="models/dt_model.pkl")
+
