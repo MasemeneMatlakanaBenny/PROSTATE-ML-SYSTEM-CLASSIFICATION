@@ -21,3 +21,13 @@ def load_X_set_y_set(train_df:pd.DataFrame):
     X_train,y_train=X_train_y_train(train_df=train_df)
     return X_train,y_train
 
+## train the model:
+@task
+def train_logistic_reg_model(X_train,y_train)->LogisticRegression:
+    
+    model=LogisticRegression(solver="liblinear")
+
+    ## fit the model:
+    model.fit(X_train,y_train)
+
+    return model
