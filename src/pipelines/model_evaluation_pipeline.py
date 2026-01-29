@@ -13,3 +13,10 @@ def load_model(path:str)->Union[LogisticRegression,DecisionTreeClassifier]:
 
     model=joblib.load(path)
     return model
+
+def get_test_sets(path:str)->pd.DataFrame:
+    df=pd.read_csv(path)
+
+    X_test,y_test=X_train_y_train(train_df=df)
+
+    return X_test,y_test
