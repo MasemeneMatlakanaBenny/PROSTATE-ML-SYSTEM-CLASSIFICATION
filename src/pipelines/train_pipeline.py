@@ -42,3 +42,8 @@ def train_tree_model(X_train,y_train)->DecisionTreeClassifier:
 
     return model
 
+## save the model:
+@task 
+def save_model(model:Union[LogisticRegression,DecisionTreeClassifier],path:str):
+    joblib.dump(model,path)
+
