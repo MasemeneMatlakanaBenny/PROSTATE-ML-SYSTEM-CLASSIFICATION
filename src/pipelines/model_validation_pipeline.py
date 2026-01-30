@@ -8,11 +8,11 @@ from prefect import task,flow
 from typing import Union,Dict
 
 @task
-def load_model(path:str)->Union[LogisticRegression,DecisionTreeClassifier]:
+def load_model_or_metrics(path:str)->Union[LogisticRegression,DecisionTreeClassifier,Dict]:
     """
-    Docstring for load_model
+    Docstring for load_model_or_metrics
     
-    :param path: path of the model
+    :param path: path of the model or metrics
     :type path: str
     :return:expecting a Logistic Regression or Decisioon Tree Trained Models since only these two have been trained. It should
     be noted that one can add the type annotation depending on the type of the models that have been trained
