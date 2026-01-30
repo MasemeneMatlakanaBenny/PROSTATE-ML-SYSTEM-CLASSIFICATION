@@ -54,3 +54,11 @@ def get_model_metrics(X_test,y_test,model:Union[LogisticRegression,DecisionTreeC
     metrics=model_metrics(y_true=y_test,X_test=X_test,model=model)
 
     return metrics
+
+@flow
+def model_evaluation_workflow():
+    """
+    """
+    log_model=load_model(path="models/log_model.pkl")
+    dt_model=load_model(path="models/dt_model.pkl")
+
