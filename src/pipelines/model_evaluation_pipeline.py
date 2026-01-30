@@ -47,9 +47,9 @@ def get_model_metrics(X_test,y_test,model:Union[LogisticRegression,DecisionTreeC
     """
     Docstring for get_model_metrics
     
-    :param X_test: Description
-    :param y_test: Description
-    :param model: Description
+    :param X_test: data that will be used to generate predictions 
+    :param y_test: compute the metrics and compare with the predictions made on the inference set-X_test
+    :param model: the trained model
     :type model: Union[LogisticRegression, DecisionTreeClassifier]
     """
     metrics=model_metrics(y_true=y_test,X_test=X_test,model=model)
