@@ -23,7 +23,17 @@ def load_model(path:str)->Union[LogisticRegression,DecisionTreeClassifier]:
     model=joblib.load(path)
     return model
 
+@task
 def get_test_sets(path:str)->pd.DataFrame:
+      """
+    Docstring for get_test_sets
+    
+    :param path: Description
+    :type path: str
+    :return: Description
+    :rtype: DataFrame
+    """
+     
     df=pd.read_csv(path)
 
     X_test,y_test=X_train_y_train(train_df=df)
