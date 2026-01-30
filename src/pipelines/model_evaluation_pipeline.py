@@ -29,9 +29,9 @@ def get_test_sets(path:str)->pd.DataFrame:
       """
     Docstring for get_test_sets
     
-    :param path: Description
+    :param path: path of the test set
     :type path: str
-    :return: Description
+    :return: X_test and y_test for model evaluation 
     :rtype: DataFrame
     """
      
