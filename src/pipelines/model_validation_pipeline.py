@@ -2,6 +2,7 @@ import pandas as pd
 import joblib
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
+from great_expectations.core.batch import Batch
 from prefect import task,flow
 from typing import Union,Dict
 
