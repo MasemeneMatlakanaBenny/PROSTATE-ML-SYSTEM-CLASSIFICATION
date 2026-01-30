@@ -80,4 +80,25 @@ def model_metrics_expectation():
     exp_labels:List[str]=["accuracy","kappa","matthews_corr","gilbert_skill_score"]
 
     return model_exp,exp_labels
+    
+
+def model_metric_validation_results(batch:Batch
+                                    ,model_expectations:List[ExpectationConfiguration]
+                                    ,expectation_labels:List[str])->pd.DataFrame:
+    """
+    Docstring for model_metric_validation_results
+    
+    :param batch: Description
+    :type batch: Batch
+    :param model_expectations: Description
+    :type model_expectations: List[ExpectationConfiguration]
+    :param expectation_labels: Description
+    :type expectation_labels: List[str]
+    :return: Description
+    :rtype: DataFrame
+    """
+
+    validation_df=validate_metric_expectations(batch=batch,expectations=model_expectations,labels=expectation_labels)
+
+    return validation_df
 
