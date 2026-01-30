@@ -61,4 +61,4 @@ def model_evaluation_workflow():
     """
     log_model=load_model(path="models/log_model.pkl")
     dt_model=load_model(path="models/dt_model.pkl")
-
+    X_test,y_test=X_train_y_train("data/test_df.csv")
