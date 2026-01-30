@@ -65,4 +65,7 @@ def model_evaluation_workflow():
      
     log_model_metrics=get_model_metrics(X_test=X_test,y_test=y_test,model=log_model)
     dt_model_metrics=get_model_metrics(X_test=X_test,y_test=y_test,model=dt_model)
+     
+     joblib.dump(log_model_metrics,"metrics/log_model_metrics.pkl")
+    joblib.dump(dt_model_metrics,"metrics/dt_model_metrics.pkl")
 
