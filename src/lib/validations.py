@@ -102,9 +102,9 @@ def meta_validations(batch:Batch)->str:
     """
     Docstring for meta_validations
     
-    :param batch: Description
+    :param batch: batch that will be used to validate the data expectations or quality tests to ensure correctness and accuracy
     :type batch: Batch
-    :return: Description
+    :return: success if all the data quality checks have been passed
     :rtype: str
     """
     expectation=gx.expectations.ExpectColumnDistinctValuesToEqualSet(
