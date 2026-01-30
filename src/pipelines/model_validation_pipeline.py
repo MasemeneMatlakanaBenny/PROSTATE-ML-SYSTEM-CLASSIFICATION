@@ -10,9 +10,10 @@ def load_model(path:str)->Union[LogisticRegression,DecisionTreeClassifier]:
     """
     Docstring for load_model
     
-    :param path: Description
+    :param path: path of the model
     :type path: str
-    :return: Description
+    :return:expecting a Logistic Regression or Decisioon Tree Trained Models since only these two have been trained. It should
+    be noted that one can add the type annotation depending on the type of the models that have been trained
     :rtype: LogisticRegression | DecisionTreeClassifier
     """
 
