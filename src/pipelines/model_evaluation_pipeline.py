@@ -69,3 +69,6 @@ def model_evaluation_workflow():
      joblib.dump(log_model_metrics,"metrics/log_model_metrics.pkl")
     joblib.dump(dt_model_metrics,"metrics/dt_model_metrics.pkl")
 
+if __name__=="__main__":
+    model_evaluation_workflow()
+
