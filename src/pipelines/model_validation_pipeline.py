@@ -26,9 +26,9 @@ def get_model_metrics(path:str)->Dict:
     """
     Docstring for get_model_metrics
     
-    :param path: Description
+    :param path: path of the model metrics
     :type path: str
-    :return: Description
+    :return: metrics of the model
     :rtype: Dict
     """
     metrics=joblib.load(path)
@@ -40,9 +40,9 @@ def metrics_dataframe(metrics:Dict)->pd.DataFrame:
     """
     Docstring for metrics_dataframe
     
-    :param metrics: Description
+    :param metrics: metrics in a dictionary format
     :type metrics: Dict
-    :return: Description
+    :return: metrics in a dataframe after converting the metrics dictionary into a usable dataframe format
     :rtype: DataFrame
     """
     metrics_df=pd.DataFrame([metrics])
