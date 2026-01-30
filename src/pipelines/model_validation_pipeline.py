@@ -65,3 +65,19 @@ def model_batch(metrics_df)->Batch:
 
     return batch
 
+@task
+def model_metrics_expectation():
+    
+    """
+    """
+
+    accuracy_exp=create_metric_expectation(min_value=0.8,max_value=0.9,metric_name="accuracy")
+    kappa_exp=create_metric_expectation(min_value=0.8,max_value=0.9,metric_name="kappa_score")
+    mat_exp=create_metric_expectation(min_value=0.8,max_value=0.9,metric_name="mat_corr")
+    gilbert_exp=create_metric_expectation(min_value=0.8,max_value=0.95,metric_name="gilbert_score")
+
+    model_exp:List[ExpectationConfiguration]=[accuracy_exp,kappa_exp,mat_exp,gilbert_exp]
+    exp_labels:List[str]=["accuracy","kappa","matthews_corr","gilbert_skill_score"]
+
+    return model_exp,exp_labels
+
