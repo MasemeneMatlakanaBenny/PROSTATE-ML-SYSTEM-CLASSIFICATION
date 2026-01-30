@@ -39,3 +39,18 @@ def get_test_sets(path:str)->pd.DataFrame:
     X_test,y_test=X_train_y_train(train_df=df)
 
     return X_test,y_test
+
+## compute the model metrics:
+@task
+def get_model_metrics(X_test,y_test,model:Union[LogisticRegression,DecisionTreeClassifier]):
+    """
+    Docstring for get_model_metrics
+    
+    :param X_test: Description
+    :param y_test: Description
+    :param model: Description
+    :type model: Union[LogisticRegression, DecisionTreeClassifier]
+    """
+    metrics=model_metrics(y_true=y_test,X_test=X_test,model=model)
+
+    return metrics
