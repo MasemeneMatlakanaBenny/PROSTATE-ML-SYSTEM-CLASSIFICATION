@@ -33,3 +33,17 @@ def get_model_metrics(path:str)->Dict:
     metrics=joblib.load(path)
 
     return metrics
+
+@task
+def metrics_dataframe(metrics:Dict)->pd.DataFrame:
+    """
+    Docstring for metrics_dataframe
+    
+    :param metrics: Description
+    :type metrics: Dict
+    :return: Description
+    :rtype: DataFrame
+    """
+    metrics_df=pd.DataFrame([metrics])
+
+    return metrics_df
