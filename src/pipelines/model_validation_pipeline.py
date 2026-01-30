@@ -82,19 +82,20 @@ def model_metrics_expectation():
     return model_exp,exp_labels
     
 
+@task
 def model_metric_validation_results(batch:Batch
                                     ,model_expectations:List[ExpectationConfiguration]
                                     ,expectation_labels:List[str])->pd.DataFrame:
     """
     Docstring for model_metric_validation_results
     
-    :param batch: Description
+    :param batch: batch for the validation workflow
     :type batch: Batch
-    :param model_expectations: Description
+    :param model_expectations: model metrics expectations in a list
     :type model_expectations: List[ExpectationConfiguration]
-    :param expectation_labels: Description
+    :param expectation_labels: labels corresponding with model metrics expectations
     :type expectation_labels: List[str]
-    :return: Description
+    :return: the metric validations in a dataframe
     :rtype: DataFrame
     """
 
