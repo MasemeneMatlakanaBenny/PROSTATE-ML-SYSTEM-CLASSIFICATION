@@ -49,3 +49,18 @@ def metrics_dataframe(metrics:Dict)->pd.DataFrame:
     metrics_df=pd.DataFrame([metrics])
 
     return metrics_df
+
+@task
+def model_batch(metrics_df)->Batch:
+    """
+    Docstring for model_batch
+    
+    :param metrics_df: model evaluation metrics in a dataframe
+    :return: batch that will be used to validate the model based on the metrics
+    :rtype: Batch
+    """
+
+    batch=create_model_batch(df=metrics_df)
+
+    return batch
+
